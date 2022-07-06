@@ -1,0 +1,16 @@
+{
+  "name": "discord-bot-blueprint",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "DuckySoLucky",
+  "license": "MIT",
+  "dependencies": {
+    "@discordjs/builders": "^0.7.0",
+    "@discordjs/rest": "^0.1.0-canary.0",
+    "discord-api-types": "^0.24.0",
+    "discord.js": "^13.2.0",
+    "fs": "^0.0.1-security",
+    "path": "^0.12.7"
+  }
+}

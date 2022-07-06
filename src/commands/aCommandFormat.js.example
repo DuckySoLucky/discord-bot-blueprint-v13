@@ -1,0 +1,36 @@
+const { SlashCommandBuilder } = require('@discordjs/builders');
+const { MessageEmbed } = require('discord.js');
+process.on('uncaughtException', function (err) {console.log(err.stack);});
+
+
+// Command
+module.exports = {
+	data: new SlashCommandBuilder()
+    .setName("NAME")
+    .setDescription("DESC")
+    .addStringOption(option => option.setName("option").setDescription("option Desc").setRequired(true)),
+
+    async execute(interaction, client, member) {
+       
+    }
+}
+
+// Embed Example (https://discordjs.guide/popular-topics/embeds.html#embed-preview)
+const statsEmbed = new MessageEmbed()
+	.setColor('#0099ff')
+	.setTitle('Some title')
+	.setURL('https://discord.js.org/')
+	.setAuthor({ name: 'Some name', iconURL: 'https://i.imgur.com/AfFp7pu.png', url: 'https://discord.js.org' })
+	.setDescription('Some description here')
+	.setThumbnail('https://i.imgur.com/AfFp7pu.png')
+	.addFields(
+		{ name: 'Regular field title', value: 'Some value here' },
+		{ name: '\u200B', value: '\u200B' },
+		{ name: 'Inline field title', value: 'Some value here', inline: true },
+		{ name: 'Inline field title', value: 'Some value here', inline: true },
+	)
+	.addField('Inline field title', 'Some value here', true)
+	.setImage('https://i.imgur.com/AfFp7pu.png')
+	.setTimestamp()
+	.setFooter({ text: 'Some footer text here', iconURL: 'https://i.imgur.com/AfFp7pu.png' });
+interaction.reply({ embeds: [statsEmbed] })
